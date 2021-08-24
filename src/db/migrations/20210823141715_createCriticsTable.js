@@ -1,9 +1,10 @@
 
 exports.up = function(knex) {
-  return knex.schema.createTable("critics", (table)=> {
-    const fields = ['preferred_name', 'surname', 'organization_name'];  
+  return knex.schema.createTable("critics", (table) => {
+    const strFields = ['preferred_name', 'surname', 'organization_name'];
     table.increments("critic_id").primary();
-    fields.map((field)=>table.string(field));
+    // iterates through strFields and initialize as strings
+    strFields.map((field)=>table.string(field));
     table.timestamps(true, true);
   })
 };

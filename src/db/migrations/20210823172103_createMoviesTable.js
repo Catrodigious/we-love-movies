@@ -6,9 +6,9 @@ exports.up = function(knex) {
     table.text("description");
     
     // store strings in an array to be iterated through
-    const stringFields = ["title", "rating", "image_url"];
+    const strFields = ["title", "rating", "image_url"];
     // creates all the table strings via iteration
-    stringFields.map((field)=>table.string(field));
+    strFields.map((field)=>table.string(field));
     table.timestamps(true, true);
   })
 };
