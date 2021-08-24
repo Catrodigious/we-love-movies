@@ -4,6 +4,7 @@ exports.up = function(knex) {
     const fields = ['preferred_name', 'surname', 'organization_name'];  
     table.increments("critic_id").primary();
     fields.map((field)=>table.string(field));
+    table.timestamps(true, true);
   })
 };
 
