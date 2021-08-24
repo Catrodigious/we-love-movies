@@ -1,7 +1,7 @@
 const knex = require("../db/connection");
 
 function list(){
-    return knex('critics').select('*');
+    return knex('reviews').select('*');
 }
 
 module.exports = {
