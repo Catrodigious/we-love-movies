@@ -5,7 +5,7 @@ const { paramsCheck } = require("./movies.middleware");
 
 async function list(req, res){
     const {is_showing} = req.query;
-    const data = (is_showing) ? await service.listShowing().splice(0,15) : await service.list();
+    const data = (is_showing) ? await (await service.listShowing()).splice(0,15) : await service.list();
 
     res.status(200).json({ data: data });
 }
