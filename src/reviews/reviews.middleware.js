@@ -10,7 +10,7 @@ async function paramsCheck(req, res, next){
 }
 
 function bodyCheck(req, res, next){
-    const { data: { score=null, content=null } = {} } = req.body;
+    const { data: { score = null, content = null } = {} } = req.body;
     let updateObj = {};
     if (!score && !content) return next({ status: 400, message: "Missing score or content in body" });
 
