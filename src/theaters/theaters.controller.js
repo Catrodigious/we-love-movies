@@ -6,12 +6,12 @@ async function list(req, res){
     const theatersAndMovies = [];
 
     for (let n=0; n < theaters.length; n++){
-        const {theater_id} = theaters[n];
+        const { theater_id } = theaters[n];
         const movies = await service.getMovies(theater_id);
-        const TM = {...theaters[n], movies: movies};
+        const TM = { ...theaters[n], movies: movies };
         theatersAndMovies.push(TM);
     }
-    res.status(200).json({data: theatersAndMovies})
+    res.status(200).json({ data: theatersAndMovies })
 }
 
 module.exports = {

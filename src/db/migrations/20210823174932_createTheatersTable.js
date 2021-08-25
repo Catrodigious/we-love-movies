@@ -6,6 +6,7 @@ exports.up = function(knex) {
     const strFields = ["name", "address_line_1", "address_line_2", "city", "state", "zip"];
     // creates all the table strings via iteration
     strFields.map((field)=>table.string(field));
+    table.timestamps(true, true);
   })
 };
 

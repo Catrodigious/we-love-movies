@@ -5,14 +5,13 @@ const { paramsCheck } = require("./movies.middleware");
 
 async function list(req, res){
     const {is_showing} = req.query;
-   
-    const data = (is_showing) ? await (await service.listShowing()).splice(0,15) : await service.list();
+    const data = (is_showing) ? await service.listShowing().splice(0,15) : await service.list();
 
-    res.status(200).json({data: data});
+    res.status(200).json({ data: data });
 }
 
 async function read(req, res){
-    res.status(200).json({data: res.locals.movie});
+    res.status(200).json({ data: res.locals.movie });
 }
 
 async function listReviews(req, res){
@@ -25,13 +24,13 @@ async function listReviews(req, res){
         reviews[n].critic = critic[0];
         allReviews.push(reviews[n]);
     }
-    res.status(200).json({data: allReviews});
+    res.status(200).json({ data: allReviews });
 }
 
 async function listTheaters(req, res){
     const movieId = res.locals.movie.movie_id;
     const result = await service.listTheaters(movieId);
-    res.status(200).json({data: result});
+    res.status(200).json({ data: result });
 }
 
 module.exports = {
