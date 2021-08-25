@@ -11,7 +11,7 @@ async function list(req, res){
         const TM = { ...theaters[n], movies: movies };
         theatersAndMovies.push(TM);
     }
-    res.status(200).json({ data: theatersAndMovies })
+    res.status(200).json({ data: theatersAndMovies });
 }
 
 module.exports = {

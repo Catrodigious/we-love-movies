@@ -1,8 +1,7 @@
 const knex = require("../db/connection");
 
 function list(){
-    return knex("reviews")
-        .select("*");
+    return knex("reviews");
 }
 
 function read(reviewId){

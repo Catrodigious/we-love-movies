@@ -5,7 +5,7 @@ exports.up = function(knex) {
     // store strings in an array to be iterated through
     const strFields = ["name", "address_line_1", "address_line_2", "city", "state", "zip"];
     // creates all the table strings via iteration
-    strFields.map((field)=>table.string(field));
+    strFields.map((field) => table.string(field));
     table.timestamps(true, true);
   })
 };
