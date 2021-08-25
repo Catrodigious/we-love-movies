@@ -5,8 +5,10 @@ const notFound = require("./errors/notFound");
 const reviewsRouter = require("./reviews/reviews.router");
 const moviesRouter = require("./movies/movies.router");
 const theatersRouter = require("./theaters/theaters.router");
-const app = express();
+const cors = require("cors");
 
+const app = express();
+app.use(cors());
 app.use(express.json());
 
 app.use("/reviews", reviewsRouter);
